@@ -1,5 +1,5 @@
 # Program name
-NAME    	= utile
+NAME    	= finished
 
 # Compiler options
 CXX     = c++ 
@@ -25,7 +25,7 @@ $(NAME): $(OBJ)
 		@echo "$(BOLD)$(BLUE)🛠️ 🚧     Compiling project...     🚧🛠️$(RESET_COLOR)"
 		@echo "\n"
 		@$(CXX) $(CFLAGS) -o $(NAME) $(OBJ)
-		@echo "$(BOLD)$(GREEN)🍻   utile ready to use   🍻$(RESET_COLOR)"
+		@echo "$(BOLD)$(GREEN)🍻   finished ready to use   🍻$(RESET_COLOR)"
 
 $(DIR_OBJ):
 	@mkdir -p $(DIR_OBJ)
