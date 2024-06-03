@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:02:40 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/03 10:55:38 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/03 14:23:35 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Fixed
 	Fixed(const float newFloat);
 	Fixed(const Fixed &copy);
 	~Fixed();
-	Fixed	&operator=(Fixed &change);
+	Fixed	&operator=(const Fixed &change);
 
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
