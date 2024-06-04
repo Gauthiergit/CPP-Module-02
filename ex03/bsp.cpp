@@ -12,20 +12,25 @@
 
 #include "Point.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point)
+
+Fixed fct(Point const &f, Point const &s, Point const &p)
 {
-	Fixed lineAB((b.getY() - a.getY()) * point.getX() - (b.getX() - a.getX()) * point.getY()
-		+ (b.getX() * a.getY() - b.getY() * a.getX()));
-	
-	Fixed lineBC((c.getY() - b.getY()) * point.getX() - (c.getX() - b.getX()) * point.getY()
-		+ (c.getX() * b.getY() - c.getY() * b.getX()));
+	Fixed first((s.getY() - f.getY()) * p.getX());
+	Fixed second((s.getX() - f.getX()) * p.getY());
+	Fixed third(s.getX() * f.getY() - s.getY() * f.getX());
+	Fixed result(first - second + third);
+	return (result);
+}
 
-	Fixed lineCA((a.getY() - c.getY()) * point.getX() - (a.getX() - c.getX()) * point.getY()
-		+ (a.getX() * c.getY() - a.getY() * c.getX()));
+bool bsp( Point const &a, Point const &b, Point const &c, Point const &point)
+{
+	Fixed lineAB = fct(a, b, point);
+	Fixed lineBC = fct(b, c, point);
+	Fixed lineCA = fct(c, a, point);
 
-	std::cout << lineAB << std::endl;
-	std::cout << lineBC << std::endl;
-	std::cout << lineCA << std::endl;
+	std::cout << "lineAB: " << lineAB << std::endl;
+	std::cout << "lineBC: " << lineBC << std::endl;
+	std::cout << "lineCA: " << lineCA << std::endl;
 
 	if (lineCA > 0 && lineBC > 0 && lineCA > 0)
 		return (true);

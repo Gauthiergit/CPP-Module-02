@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:51:22 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/04 00:01:10 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:38:44 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,43 +45,30 @@ Fixed::~Fixed()
 // -----------------------------------------------------------------------
 
 // Fonction membre de surcharge d'operateur arithmetique
-Fixed	Fixed::operator=(const Fixed &change) const
+Fixed& 	Fixed::operator=(const Fixed &change)
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
-	Fixed result;
-	result._RawBits = change.getRawBits();
-	return (result);
+	this->setRawBits(change.getRawBits());
+	return (*this);
 }
 
 Fixed	Fixed::operator+(const Fixed &change) const
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
-	Fixed result;
-	result._RawBits = this->getRawBits() + change.getRawBits();
-	return (result);
+	return (Fixed(this->toFloat() + change.toFloat()));
 }
 
-Fixed	Fixed::operator-(const Fixed &change) const
+Fixed	Fixed::operator-(const Fixed &change) const 
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
-	Fixed result;
-	result._RawBits = this->getRawBits() - change.getRawBits();
-	return (result);
+	return (Fixed(this->toFloat() - change.toFloat()));
 }
 
 Fixed	Fixed::operator*(const Fixed &change) const
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
-	Fixed result;
-	result._RawBits = this->getRawBits() * change.getRawBits();
-	return (result);
+	return (Fixed(this->toFloat() * change.toFloat()));
 }
 
-Fixed&	Fixed::operator/(const Fixed &change)
+Fixed	Fixed::operator/(const Fixed &change) const
 {
-	// std::cout << "Copy assignment operator called" << std::endl;
-	this->setRawBits((this->getRawBits() * (1 << nb_bits)) / change.getRawBits());
-	return (*this);
+	return (Fixed(this->toFloat() / change.toFloat()));
 }
 
 Fixed&	Fixed::operator++(void)
@@ -93,7 +80,7 @@ Fixed&	Fixed::operator++(void)
 Fixed	Fixed::operator++(int)
 {
 	Fixed	temp = *this;
-	++_RawBits;
+	++(*this);
 	return (temp);
 }
 
@@ -106,7 +93,7 @@ Fixed&	Fixed::operator--(void)
 Fixed	Fixed::operator--(int)
 {
 	Fixed	temp = *this;
-	--_RawBits;
+	--(*this);
 	return (temp);
 }
 // -----------------------------------------------------------------------

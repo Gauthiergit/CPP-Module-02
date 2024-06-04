@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 17:02:40 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/04 00:01:24 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/04 15:39:25 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class Fixed
 	Fixed(const Fixed &copy);
 	~Fixed();
 
-	Fixed	operator=(const Fixed &change) const;
+	Fixed&	operator=(const Fixed &change);
 	Fixed	operator+(const Fixed &change) const;
 	Fixed 	operator-(const Fixed &change) const;
 	Fixed 	operator*(const Fixed &change) const;
-	Fixed	&operator/(const Fixed &change);
+	Fixed	operator/(const Fixed &change) const;
 
 	Fixed&	operator++(void);
 	Fixed	operator++(int);

@@ -25,8 +25,8 @@ Point::~Point() {}
 
 Point& Point::operator=(const Point &change)
 {
-	this->x = change.x;
-	this->y = change.y;
+	(Fixed)x = change.x;
+	(Fixed)y = change.y;
 	return (*this);
 }
 
