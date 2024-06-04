@@ -27,9 +27,9 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	std::cout << lineBC << std::endl;
 	std::cout << lineCA << std::endl;
 
-	if (lineCA.getRawBits() > 0 && lineBC.getRawBits() > 0 && lineCA.getRawBits() > 0)
+	if (lineCA > 0 && lineBC > 0 && lineCA > 0)
 		return (true);
-	else if (lineCA.getRawBits() < 0 && lineBC.getRawBits() < 0 && lineCA.getRawBits() < 0)
+	else if (lineCA < 0 && lineBC < 0 && lineCA < 0)
 		return (true);
 	return (false);
 }

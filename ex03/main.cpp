@@ -6,11 +6,14 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 18:28:51 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/03 23:11:31 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/04 11:19:11 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+
+
+// Echec code doesn't work
 
 int main( void ) 
 {
