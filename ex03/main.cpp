@@ -6,7 +6,7 @@
 /*   By: gpeyre <gpeyre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 18:28:51 by gpeyre            #+#    #+#             */
-/*   Updated: 2024/06/04 16:57:54 by gpeyre           ###   ########.fr       */
+/*   Updated: 2024/06/05 10:27:29 by gpeyre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 int main( void ) 
 {
-	Point A(0.00f, 0.00f);
-	Point B(5.00f, 0.00f);
-	Point C(0.00f, 5.00f);  
-	Point P(2.00f, 3.00f);
-
-	bool result = bsp(A, B, C, P);
+	bool result = bsp(Point(0.0f, 0.0f), Point(5.0f, 0.0f), Point(0.0f, 5.0f), Point(2.0f, 3.0f));
 
 	if (result)
 		std::cout << "True" << std::endl;

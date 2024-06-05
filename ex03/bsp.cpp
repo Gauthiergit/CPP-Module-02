@@ -22,7 +22,7 @@ Fixed fct(Point const &f, Point const &s, Point const &p)
 	return (result);
 }
 
-bool bsp( Point const &a, Point const &b, Point const &c, Point const &point)
+bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	Fixed lineAB = fct(a, b, point);
 	Fixed lineBC = fct(b, c, point);
